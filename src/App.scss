@@ -43,6 +43,10 @@ body {
   padding: 0 12vw;
   margin: 75px 0;
   overflow: hidden;
+  hr {
+    width: 50px;
+    height: 3px;
+  }
   .content-hero {
     .line {
       width: 7rem;
@@ -143,6 +147,53 @@ body {
   }
 }
 // End of Content
+
+// Card Skills
+.skill-content {
+  margin: 1rem 0;
+  padding: 1rem 0;
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .line-skills {
+    width: 50px;
+    height: 5px;
+    background-color: $primary-color;
+    margin-bottom: 2.5rem;
+  }
+  .cards-skill {
+    display: flex;
+    justify-content: space-between;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+
+    .card-skills {
+      // width: 360px;
+      border-radius: 10px;
+      .ant-card-cover {
+        object-fit: cover;
+        width: 75px;
+        margin: 0 auto;
+        padding: 2rem 0 0 0;
+      }
+      .ant-card-meta {
+        text-align: center;
+      }
+
+      &.ant-card-hoverable {
+        &:hover {
+          border-color: #3152ca;
+          transform: scale(1.1);
+          transition: transform 0.3s;
+        }
+      }
+    }
+  }
+}
+// End of Card Sklls
 
 // ==============================================================================
 // ====  Responsive ============================================================-

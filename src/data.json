@@ -1,0 +1,19 @@
+{
+  "skills": [
+    {
+      "image": "./images/skills1.png",
+      "title": "Web Development",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at purus velit. "
+    },
+    {
+      "image": "./images/skills2.png",
+      "title": "Graphic Designer",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at purus velit. "
+    },
+    {
+      "image": "./images/skills3.png",
+      "title": "UI/UX Designer",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at purus velit. "
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Layout, Menu, Row, Col } from "antd";
+import { Layout, Menu, Row, Col, Card } from "antd";
 import Logo from "./images/logo.svg";
 import "./App.scss";
 
@@ -11,15 +11,20 @@ import Fade from "react-reveal/Fade";
 import Ling1 from "./images/lingkaran1.png";
 import Ling2 from "./images/lingkaran2.png";
 import Ling3 from "./images/lingkaran3.png";
+// import Skill1 from "./images/skills1.png";
 
 // Icon
 import { FaDribbble } from "react-icons/fa";
 import { AiOutlineGithub } from "react-icons/ai";
 import { GrLinkedin } from "react-icons/gr";
 
+// Data
+import data from "./data.json";
+
 export default class App extends Component {
   render() {
     const { Header, Content, Footer } = Layout;
+    const { Meta } = Card;
     return (
       <div className="App">
         <Layout style={{ backgroundColor: "transparent" }}>
@@ -37,6 +42,7 @@ export default class App extends Component {
             </Fade>
           </Header>
           <Content className="content">
+            {/* Hero */}
             <Row justify="space-between">
               <Col md={10} sm={20}>
                 <div className="content-hero">
@@ -88,6 +94,34 @@ export default class App extends Component {
                 </div>
               </Bounce>
             </div>
+            {/* End of Hero */}
+
+            <section className="skill-content">
+              <h1>Skills</h1>
+              <div className="line-skills"></div>
+              <div className="cards-skill">
+                <Row justify="space-between">
+                  {data.skills.map((item, index) => {
+                    return (
+                      <Col span={7}>
+                        <Card
+                          key={`item-${index}`}
+                          className="card-skills"
+                          hoverable
+                          cover={<img src={item.image} alt="Web Development" />}
+                        >
+                          <Meta
+                            description={item.description}
+                            title={item.title}
+                          />
+                        </Card>
+                      </Col>
+                    );
+                  })}
+                </Row>
+              </div>
+            </section>
+            {/* Skills */}
           </Content>
           <Footer>Footer</Footer>
         </Layout>
