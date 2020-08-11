@@ -15,7 +15,12 @@ import Ling3 from "./images/lingkaran3.png";
 // import Portofolio2 from "./images/portofolio2.png";
 
 // Icon
-import { FaDribbble } from "react-icons/fa";
+import {
+  FaDribbble,
+  FaFacebookSquare,
+  FaInstagram,
+  FaTwitter,
+} from "react-icons/fa";
 import { AiOutlineGithub } from "react-icons/ai";
 import { GrLinkedin } from "react-icons/gr";
 
@@ -179,23 +184,74 @@ export default class App extends Component {
                   {data.experience.map((item, index) => {
                     return (
                       <Col md={7} sm={24} key={`experience-${index}`}>
-                        <div className="card-experience">
-                          <h2>{item.year}</h2>
-                          <h3>{item.month}</h3>
-                          <p>{item.status}</p>
-                          <h4>{item.role}</h4>
-                          <h5>{item.office}</h5>
+                        <div className="wrapper">
+                          <div className="card-experience">
+                            <h2>{item.year}</h2>
+                            <h3>{item.month}</h3>
+                            <p>{item.status}</p>
+                            <h4>{item.role}</h4>
+                            <h5>{item.office}</h5>
+                          </div>
+                          <div className="circle" />
                         </div>
                       </Col>
                     );
                   })}
                 </Row>
               </div>
-              <div className="experience-bg" />
             </section>
             {/* End of Experience */}
+
+            {/* Contact */}
+            <section className="contact">
+              <h1>Contact</h1>
+              <div className="line-skills" />
+              <div className="contact-content">
+                {data.contact.map((item, index) => {
+                  return (
+                    <div className="contact-item">
+                      <img src={item.image} alt={`item-${index}`} />
+                      <h2>{item.description}</h2>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+            {/* End of Contact */}
           </Content>
-          <Footer>Footer</Footer>
+          <Footer className="footer">
+            <div className="content-footer">
+              <div className="head-footer">
+                <img src={Logo} alt="Logo" />
+                <h2>Zhafran Tharif.</h2>
+              </div>
+              <Row md={18} sm={10}>
+                <Col>
+                  <div className="content-icon-footer">
+                    <a href="/">
+                      <GrLinkedin />
+                    </a>
+                    <a href="/">
+                      <FaDribbble />
+                    </a>
+                    <a href="/">
+                      <AiOutlineGithub />
+                    </a>
+                    <a href="/">
+                      <FaInstagram />
+                    </a>
+                    <a href="/">
+                      <FaTwitter />
+                    </a>
+                    <a href="/">
+                      <FaFacebookSquare />
+                    </a>
+                  </div>
+                </Col>
+              </Row>
+              <p>Copyright 2020 © Zhafran Tharif </p>
+            </div>
+          </Footer>
         </Layout>
       </div>
     );

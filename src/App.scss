@@ -58,10 +58,29 @@ body {
       margin: 2rem 0;
     }
     h1 {
+      position: relative;
+      display: inline-block;
       font-size: 92px;
       font-weight: 700;
-      color: #000000;
-      margin-bottom: 0;
+      color: rgb(0, 0, 0);
+      overflow: hidden;
+      cursor: default;
+      background: linear-gradient(
+        to right,
+        $primary-color,
+        $primary-color 50%,
+        rgb(0, 0, 0) 50%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 100%;
+      background-position: 100%;
+      transition: background-position 275ms ease;
+      text-decoration: none;
+      &:hover {
+        background-position: 0 100%;
+      }
     }
     .content-icon {
       display: flex;
@@ -250,12 +269,8 @@ body {
 .experience {
   margin: 1rem 0;
   padding: 1rem 0;
-  // position: relative;
-  h1 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 0;
-  }
+  position: relative;
+  overflow: hidden;
 
   .line-skills {
     width: 50px;
@@ -263,23 +278,21 @@ body {
     background-color: $primary-color;
     margin-bottom: 2.5rem;
   }
-  .experience-bg {
-    position: absolute;
-    background-color: #e3e6f0;
-    width: 100%;
-    margin-top: -100px;
-    right: 0;
-    left: 0;
-    height: 100px;
-    z-index: 1;
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0;
   }
 
   .experience-content {
     // position: relative;
 
-    .card-experience {
-      z-index: 99;
+    .wrapper {
+      position: relative;
+      overflow: hidden;
       width: 360px;
+      height: 360px;
+      margin: 0;
       background: rgb(68, 107, 246);
       background: linear-gradient(
         135deg,
@@ -290,31 +303,159 @@ body {
       padding: 4.5rem 2.5rem;
       border-radius: 5px;
 
-      h2,
-      h3,
-      h4,
-      h5,
-      p {
-        color: #ffffff;
+      .circle {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        background-color: #ffffff;
+        transform: scale(1);
+        transition: transform 0.3s linear;
+        top: 0;
+        left: 0;
+        margin-top: -45px;
+        margin-left: -45px;
       }
 
-      // transition: background-color 1s ease-in-out;
-      &:hover {
-        background: #ffffff;
+      .card-experience {
+        cursor: default;
+        position: absolute;
+        z-index: 99;
         h2,
         h3,
         h4,
         h5,
         p {
-          color: $primary-color;
+          color: #ffffff;
+          margin-bottom: 0;
+          z-index: 10;
         }
 
+        h2 {
+          font-size: 36px;
+          font-weight: 600;
+        }
+
+        h3 {
+          font-size: 28px;
+          font-weight: 300;
+        }
+
+        p {
+          font-size: 18px;
+          font-weight: 300;
+          margin-top: 1.5rem;
+        }
+
+        h4 {
+          font-size: 25px;
+          font-weight: 600;
+        }
+
+        h5 {
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+
+      // transition: background-color 1s ease-in-out;
+      &:hover {
+        // background: #ffffff;
+        .card-experience {
+          h2,
+          h3,
+          h4,
+          h5,
+          p {
+            color: $primary-color;
+          }
+        }
         border: 1px solid $primary-color;
+        .circle {
+          transform: scale(25);
+        }
       }
     }
   }
 }
 // End of Experience
+
+// Contact
+.contact {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  position: relative;
+  overflow: hidden;
+
+  .line-skills {
+    width: 50px;
+    height: 5px;
+    background-color: $primary-color;
+    margin-bottom: 2.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  .contact-content {
+    .contact-item {
+      cursor: default;
+      display: flex;
+      margin-bottom: 2rem;
+      img {
+        margin-right: 2.5rem;
+      }
+    }
+  }
+}
+// End of Contact
+
+// Footer
+.footer {
+  padding: 2.5rem 12vw;
+  margin-bottom: 0;
+  .content-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .head-footer {
+      display: flex;
+      align-items: center;
+      h2 {
+        margin-bottom: 0;
+        font-size: 20px;
+        font-weight: 600;
+        color: #5d5d5d;
+      }
+      img {
+        margin-right: 1.5rem;
+      }
+    }
+
+    .content-icon-footer {
+      a {
+        margin: 0 2rem;
+        font-size: 2rem;
+        svg {
+          cursor: pointer;
+          color: #878787;
+        }
+        &:hover {
+          svg {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  .ant-col {
+    margin: 1.8rem 0;
+  }
+}
+// End of Footer
 
 // ==============================================================================
 // ====  Responsive =============================================================

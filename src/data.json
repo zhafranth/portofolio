@@ -73,5 +73,23 @@
       "role": "UI/UX Designer",
       "office": "Ekselen.id"
     }
+  ],
+  "contact": [
+    {
+      "image": "./images/icon1.svg",
+      "description": "www.zhafranth.com"
+    },
+    {
+      "image": "./images/icon2.svg",
+      "description": "zhafranth@gmail.com"
+    },
+    {
+      "image": "./images/icon3.svg",
+      "description": "Jakarta, Indonesia"
+    },
+    {
+      "image": "./images/icon4.svg",
+      "description": "0821-9134-0616"
+    }
   ]
 }
