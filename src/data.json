@@ -15,5 +15,63 @@
       "title": "UI/UX Designer",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at purus velit. "
     }
+  ],
+
+  "portofolio": [
+    {
+      "image": [
+        {
+          "img": "./images/portofolio1.png"
+        },
+        {
+          "img": "./images/portofolio2.png"
+        },
+        {
+          "img": "./images/portofolio1.png"
+        }
+      ],
+      "title": "Kattamata",
+      "role": "Web Development",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at purus velit. "
+    },
+    {
+      "image": [
+        {
+          "img": "./images/portofolio2.png"
+        },
+        {
+          "img": "./images/portofolio1.png"
+        },
+        {
+          "img": "./images/portofolio2.png"
+        }
+      ],
+      "title": "Furnihome",
+      "role": "Web Development",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at purus velit. "
+    }
+  ],
+  "experience": [
+    {
+      "year": "2018",
+      "month": "Mei - July",
+      "status": "Internship",
+      "role": "UI/UX Designer",
+      "office": "PT.TELKOM INDONESIA"
+    },
+    {
+      "year": "2019",
+      "month": "Juny - December",
+      "status": "Internship",
+      "role": "QA Engineer",
+      "office": "PT.TELKOM INDONESIA"
+    },
+    {
+      "year": "2020",
+      "month": "July - Now",
+      "status": "Fulltime",
+      "role": "UI/UX Designer",
+      "office": "Ekselen.id"
+    }
   ]
 }

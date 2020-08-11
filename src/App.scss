@@ -6,6 +6,9 @@ body {
   font-family: "montserrat";
 }
 
+.app {
+  position: relative;
+}
 // Header
 .header {
   color: #ffffff;
@@ -195,8 +198,126 @@ body {
 }
 // End of Card Sklls
 
+// Portofolio
+.portofolio {
+  margin: 1rem 0;
+  padding: 1rem 0;
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .line-skills {
+    width: 50px;
+    height: 5px;
+    background-color: $primary-color;
+    margin-bottom: 2.5rem;
+  }
+  .portofolio-content {
+    .img-wrapper {
+      width: 653px;
+      border-radius: 15px;
+      overflow: hidden;
+      .img-cover {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+    .meta-portofolio {
+      h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: $primary-color;
+        margin-bottom: 0;
+      }
+      p {
+        font-weight: 300;
+        font-size: 18px;
+      }
+      h3 {
+        font-weight: 400;
+      }
+    }
+    .colom-portofolio {
+      margin-bottom: 2rem;
+    }
+  }
+}
+// End of Portofolio
+
+// Experience
+.experience {
+  margin: 1rem 0;
+  padding: 1rem 0;
+  // position: relative;
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .line-skills {
+    width: 50px;
+    height: 5px;
+    background-color: $primary-color;
+    margin-bottom: 2.5rem;
+  }
+  .experience-bg {
+    position: absolute;
+    background-color: #e3e6f0;
+    width: 100%;
+    margin-top: -100px;
+    right: 0;
+    left: 0;
+    height: 100px;
+    z-index: 1;
+  }
+
+  .experience-content {
+    // position: relative;
+
+    .card-experience {
+      z-index: 99;
+      width: 360px;
+      background: rgb(68, 107, 246);
+      background: linear-gradient(
+        135deg,
+        rgba(68, 107, 246, 1) 0%,
+        rgba(5, 32, 143, 1) 100%
+      );
+
+      padding: 4.5rem 2.5rem;
+      border-radius: 5px;
+
+      h2,
+      h3,
+      h4,
+      h5,
+      p {
+        color: #ffffff;
+      }
+
+      // transition: background-color 1s ease-in-out;
+      &:hover {
+        background: #ffffff;
+        h2,
+        h3,
+        h4,
+        h5,
+        p {
+          color: $primary-color;
+        }
+
+        border: 1px solid $primary-color;
+      }
+    }
+  }
+}
+// End of Experience
+
 // ==============================================================================
-// ====  Responsive ============================================================-
+// ====  Responsive =============================================================
 // ==============================================================================
 @media screen and (max-width: 992px) {
   // Content
@@ -265,4 +386,12 @@ body {
     }
   }
   // End Of Content
+
+  // Card Skills
+  .skill-content {
+    .card-skills {
+      margin-bottom: 1.5rem;
+    }
+  }
+  // End of Card Skills
 }

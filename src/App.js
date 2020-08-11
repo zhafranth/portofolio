@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Layout, Menu, Row, Col, Card } from "antd";
+import { Layout, Menu, Row, Col, Card, Carousel } from "antd";
 import Logo from "./images/logo.svg";
 import "./App.scss";
 
@@ -11,7 +11,8 @@ import Fade from "react-reveal/Fade";
 import Ling1 from "./images/lingkaran1.png";
 import Ling2 from "./images/lingkaran2.png";
 import Ling3 from "./images/lingkaran3.png";
-// import Skill1 from "./images/skills1.png";
+// import Portofolio1 from "./images/portofolio1.png";
+// import Portofolio2 from "./images/portofolio2.png";
 
 // Icon
 import { FaDribbble } from "react-icons/fa";
@@ -96,6 +97,7 @@ export default class App extends Component {
             </div>
             {/* End of Hero */}
 
+            {/* Skills */}
             <section className="skill-content">
               <h1>Skills</h1>
               <div className="line-skills"></div>
@@ -103,25 +105,95 @@ export default class App extends Component {
                 <Row justify="space-between">
                   {data.skills.map((item, index) => {
                     return (
-                      <Col span={7}>
-                        <Card
-                          key={`item-${index}`}
-                          className="card-skills"
-                          hoverable
-                          cover={<img src={item.image} alt="Web Development" />}
-                        >
-                          <Meta
-                            description={item.description}
-                            title={item.title}
-                          />
-                        </Card>
+                      <Col md={7} sm={18}>
+                        <Fade delay={300 * index} bottom>
+                          <Card
+                            key={`item-${index}`}
+                            className="card-skills"
+                            hoverable
+                            cover={
+                              <img src={item.image} alt="Web Development" />
+                            }
+                          >
+                            <Meta
+                              description={item.description}
+                              title={item.title}
+                            />
+                          </Card>
+                        </Fade>
                       </Col>
                     );
                   })}
                 </Row>
               </div>
             </section>
-            {/* Skills */}
+            {/* End of Skills */}
+
+            {/* Portofolio */}
+            <section className="portofolio">
+              <h1>Portofolio</h1>
+              <div className="line-skills" />
+              <div className="portofolio-content">
+                <Row>
+                  {data.portofolio.map((item, index) => {
+                    return (
+                      <Col span={24} className="colom-portofolio">
+                        <Row justify="space-between">
+                          <Col md={14} sm={15}>
+                            <Carousel autoplay>
+                              {item.image.map((item, index) => {
+                                return (
+                                  <div className="img-wrapper">
+                                    <img
+                                      src={item.img}
+                                      alt="kattamata"
+                                      className="img-cover"
+                                    />
+                                  </div>
+                                );
+                              })}
+                            </Carousel>
+                          </Col>
+                          <Col md={8} sm={10}>
+                            <div className="meta-portofolio">
+                              <h2>{item.title}</h2>
+                              <p>{item.role}</p>
+                              <h3>{item.description}</h3>
+                            </div>
+                          </Col>
+                        </Row>
+                      </Col>
+                    );
+                  })}
+                </Row>
+              </div>
+            </section>
+            {/* End Of Portofolio */}
+
+            {/* Experience */}
+            <section className="experience">
+              <h1>Experience</h1>
+              <div className="line-skills" />
+              <div className="experience-content">
+                <Row justify="space-between">
+                  {data.experience.map((item, index) => {
+                    return (
+                      <Col md={7} sm={24} key={`experience-${index}`}>
+                        <div className="card-experience">
+                          <h2>{item.year}</h2>
+                          <h3>{item.month}</h3>
+                          <p>{item.status}</p>
+                          <h4>{item.role}</h4>
+                          <h5>{item.office}</h5>
+                        </div>
+                      </Col>
+                    );
+                  })}
+                </Row>
+              </div>
+              <div className="experience-bg" />
+            </section>
+            {/* End of Experience */}
           </Content>
           <Footer>Footer</Footer>
         </Layout>
