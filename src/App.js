@@ -249,7 +249,7 @@ export default class App extends Component {
                   </div>
                 </Col>
               </Row>
-              <p>Copyright 2020 © Zhafran Tharif </p>
+              <p>Copyright 2020 © Zhafran Tharif</p>
             </div>
           </Footer>
         </Layout>
