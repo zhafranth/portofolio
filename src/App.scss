@@ -27,6 +27,13 @@ body {
     color: #b2b5bd;
     font-weight: 400;
     font-size: 18px;
+    .ant-menu-item {
+      button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+      }
+    }
     .ant-menu-item-selected {
       font-weight: 600;
       color: $primary-color;
@@ -290,8 +297,8 @@ body {
     .wrapper {
       position: relative;
       overflow: hidden;
-      width: 320px;
-      height: 360px;
+      width: 260px;
+      height: 330px;
       margin: 0;
       background: rgb(68, 107, 246);
       background: linear-gradient(
@@ -328,32 +335,31 @@ body {
         p {
           color: #ffffff;
           margin-bottom: 0;
-          z-index: 10;
         }
 
         h2 {
-          font-size: 36px;
+          font-size: 32px;
           font-weight: 600;
         }
 
         h3 {
-          font-size: 28px;
+          font-size: 21px;
           font-weight: 300;
         }
 
         p {
-          font-size: 18px;
+          font-size: 14px;
           font-weight: 300;
           margin-top: 1.5rem;
         }
 
         h4 {
-          font-size: 25px;
+          font-size: 21px;
           font-weight: 600;
         }
 
         h5 {
-          font-size: 18px;
+          font-size: 14px;
           font-weight: 600;
         }
       }

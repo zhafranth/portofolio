@@ -28,6 +28,30 @@ import { GrLinkedin } from "react-icons/gr";
 import data from "./data.json";
 
 export default class App extends Component {
+  _handleScrollSkill = () => {
+    window.scrollTo({
+      behavior: "smooth",
+      top: 650,
+    });
+  };
+  _handleScrollPortofolio = () => {
+    window.scrollTo({
+      behavior: "smooth",
+      top: 1050,
+    });
+  };
+  _handleScrollExperience = () => {
+    window.scrollTo({
+      behavior: "smooth",
+      top: 1820,
+    });
+  };
+  _handleScrollContact = () => {
+    window.scrollTo({
+      behavior: "smooth",
+      top: 2290,
+    });
+  };
   render() {
     const { Header, Content, Footer } = Layout;
     const { Meta } = Card;
@@ -40,10 +64,26 @@ export default class App extends Component {
             </Bounce>
             <Fade top delay={300}>
               <Menu mode="horizontal">
-                <Menu.Item key="1">Skills</Menu.Item>
-                <Menu.Item key="2">Portofolio</Menu.Item>
-                <Menu.Item key="3">Experience</Menu.Item>
-                <Menu.Item key="4">Contact</Menu.Item>
+                <Menu.Item key="1">
+                  <button type="button" onClick={this._handleScrollSkill}>
+                    Skills
+                  </button>
+                </Menu.Item>
+                <Menu.Item key="2">
+                  <button type="button" onClick={this._handleScrollPortofolio}>
+                    Portofolio
+                  </button>
+                </Menu.Item>
+                <Menu.Item key="3">
+                  <button type="button" onClick={this._handleScrollExperience}>
+                    Experience
+                  </button>
+                </Menu.Item>
+                <Menu.Item key="4">
+                  <button type="button" onClick={this._handleScrollContact}>
+                    Contact
+                  </button>
+                </Menu.Item>
               </Menu>
             </Fade>
           </Header>
