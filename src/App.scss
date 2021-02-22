@@ -1,9 +1,10 @@
 @import "~antd/dist/antd.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
 
 $primary-color: #3152ca;
 
 body {
-  font-family: "montserrat";
+  font-family: "Montserrat", sans-serif;
 }
 
 .app {
@@ -32,6 +33,9 @@ body {
         background-color: transparent;
         border: none;
         outline: none;
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
     .ant-menu-item-selected {
@@ -200,8 +204,9 @@ body {
     transition: transform 0.3s ease-in-out;
 
     .card-skills {
-      // width: 360px;
+      // width: 100%;
       border-radius: 10px;
+      height: 250px;
       .ant-card-cover {
         object-fit: cover;
         width: 75px;
@@ -210,6 +215,7 @@ body {
       }
       .ant-card-meta {
         text-align: center;
+        width: 100%;
       }
 
       &.ant-card-hoverable {
@@ -241,32 +247,87 @@ body {
     margin-bottom: 2.5rem;
   }
   .portofolio-content {
-    .img-wrapper {
-      width: 653px;
-      border-radius: 15px;
+    .card-portofolio {
+      // border-radius: 10px;
+      position: relative;
+      height: 400px;
+      width: 100%;
       overflow: hidden;
-      .img-cover {
-        object-fit: cover;
+      margin-bottom: 3rem;
+      .img-wrapper-portofolio {
         width: 100%;
+        height: 100%;
+        overflow: hidden;
+        .img-cover-portofolio {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transform: scale(1.1);
+          transition: transform 0.2s linear;
+        }
       }
-    }
-    .meta-portofolio {
-      h2 {
-        font-size: 2rem;
-        font-weight: 600;
-        color: $primary-color;
-        margin-bottom: 0;
+      &:hover {
+        .img-cover-portofolio {
+          transform: scale(1);
+          transition: transform 0.2s linear;
+        }
+        .card-portofolio-hover {
+          background-color: rgba(40, 74, 194, 0.72);
+          .title-portofolio {
+            color: #fff;
+            transition: color 0.3s linear;
+          }
+          .border {
+            background-color: rgb(210, 210, 210);
+            transition: color 0.3s linear;
+          }
+          .tools {
+            color: #fff;
+            transition: color 0.3s linear;
+          }
+          transition: background-color 0.3s linear;
+        }
       }
-      p {
-        font-weight: 300;
-        font-size: 18px;
+      .card-portofolio-hover {
+        //   visibility: hidden;
+        //   opacity: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        box-sizing: border-box;
+        padding: 2.5rem 1.2rem;
+        background-color: transparent;
+        transition: background-color 0.2s linear;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .title-portofolio {
+          font-weight: 700;
+          font-size: 28px;
+          color: transparent;
+          text-align: center;
+          transition: color 0.3s linear;
+          margin: 0;
+          span {
+            font-weight: 400;
+          }
+        }
+        .border {
+          width: 70%;
+          height: 1px;
+          background-color: transparent;
+          transition: color 0.3s linear;
+          margin: 2rem 0;
+        }
+        .tools {
+          font-weight: normal;
+          font-size: 20px;
+          color: transparent;
+        }
       }
-      h3 {
-        font-weight: 400;
-      }
-    }
-    .colom-portofolio {
-      margin-bottom: 2rem;
     }
   }
 }
@@ -307,8 +368,9 @@ body {
         rgba(5, 32, 143, 1) 100%
       );
 
-      padding: 4.5rem 2.5rem;
+      padding: 2.5rem;
       border-radius: 5px;
+      box-sizing: border-box;
 
       .circle {
         position: absolute;
@@ -322,12 +384,13 @@ body {
         left: 0;
         margin-top: -45px;
         margin-left: -45px;
+        z-index: 1;
       }
 
       .card-experience {
+        position: relative;
+        z-index: 10;
         cursor: default;
-        position: absolute;
-        z-index: 99;
         h2,
         h3,
         h4,
@@ -335,6 +398,7 @@ body {
         p {
           color: #ffffff;
           margin-bottom: 0;
+          z-index: 10;
         }
 
         h2 {
