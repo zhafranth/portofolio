@@ -17,8 +17,8 @@ const Footer = () => {
         <img src={Logo} alt="Logo" />
         <h2>Zhafran Tharif.</h2>
       </div>
-      <Row>
-        <Col md={18} sm={10}>
+      <Row md={18} sm={10}>
+        <Col>
           <div className="content-icon-footer">
             <a
               href="https://www.linkedin.com/in/zhafrantharif/"
